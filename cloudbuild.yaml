@@ -1,0 +1,9 @@
+steps:
+- name: 'gcr.io/cloud-builders/gsutil'
+  args: ["-m", "rsync", "-r", "-c", "-d", "gs://satis-jmerilainen-fi", "dist"]
+- name: 'gcr.io/$PROJECT_ID/composer'
+  args: ['install']
+- name: 'gcr.io/$PROJECT_ID/composer'
+  args: ['build']
+- name: 'gcr.io/cloud-builders/gsutil'
+  args: ["-m", "rsync", "-r", "-c", "-d", "dist", "gs://satis-jmerilainen-fi"]
