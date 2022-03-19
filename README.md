@@ -1,6 +1,6 @@
 # satis.jmerilainen.fi
 
-Example Satis repository using [jmerilanien/satis-builder](https://github.com/jmerilainen/satis-builder).
+Example Satis repository using [jmerilainen/satis-builder](https://github.com/jmerilainen/satis-builder).
 
 ## License
 
