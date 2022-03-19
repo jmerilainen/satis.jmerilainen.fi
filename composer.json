@@ -1,0 +1,26 @@
+{
+    "name": "jmerilainen/satis.jmerilainen.fi",
+    "description": "Example Satis repository",
+    "homepage": "https://github.com/jmerilainen/satis.jmerilainen.fi",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Joonas Meriläinen",
+            "email": "merilainenjoonas@gmail.com"
+        }
+    ],
+    "require": {
+        "composer/satis": "dev-main",
+        "jmerilainen/satis-builder": "dev-main"
+    },
+    "scripts": {
+        "build-json": "vendor/bin/satis-builder build --from=packages --external=packages/external.json --name=jmerilainen/satis.jmerilainen.fi --homepage=https://satis.jmerilainen.f --output=satis.json",
+        "build-satis": "vendor/bin/satis build satis.json dist",
+        "build": [
+            "@build-json",
+            "@build-satis",
+            "rm satis.json"
+        ]
+    }
+}
